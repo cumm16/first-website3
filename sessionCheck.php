@@ -7,7 +7,7 @@
         $userDisplayName = "Not logged in yet!";
         exit; 
     } else {
-        $userDisplayName = $_SESSION["userDisplatName"];
+        $userDisplayName = $_SESSION["userDisplayName"];
         $userName = $_SESSION["userName"]; 
     }
 ?>

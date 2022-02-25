@@ -7,6 +7,7 @@
 
     $_SESSION["userName"] = "user";
     $_SESSION["userDisplayName"] = "Sam"; 
+    $userDisplayName = $_SESSION["userDisplayName"];
 
 ?>
 <html>
