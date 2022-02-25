@@ -5,9 +5,15 @@
     session_unset();
     session_start();
 
+    /*
     $_SESSION["userName"] = "user";
     $_SESSION["userDisplayName"] = "Sam"; 
-    $userDisplayName = $_SESSION["userDisplayName"];
+    $userDisplayName = $_SESSION["userDisplayName"]; 
+    */
+
+    $message = "Please Login."; 
+
+   
 
 ?>
 <html>
@@ -26,6 +32,28 @@
 			<h1>
                 Login   
             </h1>   
+            <form action="" name="login" id=:"login" method="POST">
+                <table>
+                    <tr>
+                        <td>User Name:</td>
+                        <td><input type="text" name="userName" required></input></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password" required></input></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><button type="reset" name="reset">Reset</button></td>
+                        <td><button type="submit" name="submit">Submit</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <?php echo($message);?>
+                        </td>
+                    </tr>
+                </table>
+            </form>
 		</maincontent>
 <?php   require('footer.php');
 ?>
