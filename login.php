@@ -12,6 +12,20 @@
     */
 
     $message = "Please Login."; 
+    $method = $_SERVER["REQUEST_METHOD"];
+
+    IF ($method=="POST") {
+        $userName = $_POST["userName"];
+        $password = $_POST["password"]; 
+
+        IF ($userName == "admin")  {
+            $message = "Invalid User name"; 
+        } ELSE IF ($password == "password") {
+            $message = "Invalid Password"; 
+        } ELSE {
+            $userDisplayName = "Sam"; 
+        }
+    }
 
    
 
@@ -32,7 +46,7 @@
 			<h1>
                 Login   
             </h1>   
-            <form action="" name="login" id=:"login" method="POST">
+            <form action="" name="login" id="login" method="POST">
                 <table>
                     <tr>
                         <td>User Name:</td>
