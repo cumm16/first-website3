@@ -5,6 +5,8 @@
     session_unset();
     session_start();
 
+    $_SESSION["userDisplayName"] = "Not yet logged in!"; 
+
     /*
     $_SESSION["userName"] = "user";
     $_SESSION["userDisplayName"] = "Sam"; 
@@ -18,12 +20,15 @@
         $userName = $_POST["userName"];
         $password = $_POST["password"]; 
 
-        IF ($userName == "admin")  {
+        IF ($userName != "admin")  {
             $message = "Invalid User name"; 
-        } ELSE IF ($password == "password") {
+        } ELSE IF ($password != "password") {
             $message = "Invalid Password"; 
         } ELSE {
             $userDisplayName = "Sam"; 
+            $message = "Successfully logged in.";
+            $_SESSION["userDisplayName"] = $userDisplayName; 
+            $_SESSION["userName"] = $userName;
         }
     }
 
